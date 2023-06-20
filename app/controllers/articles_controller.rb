@@ -3,6 +3,8 @@
 # Manages actions and CRUD
 # actions for routes: index, show, new
 class ArticlesController < ApplicationController
+  http_basic_authenticate_with name: 'dhh', password: 'secret', except: %i[index show]
+
   def index
     @articles = Article.all
   end
