@@ -2,15 +2,15 @@
 
 <p><%= @article.body %></p>
 
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+<ul class='list-unstyled d-flex fw-normal pb-2'>
+  <li><%= link_to "Edit", edit_article_path(@article), class:'text-decoration-none btn btn-primary me-2' %></li>
   <li><%= link_to "Destroy", article_path(@article), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %></li>
+                  }, class:'text-decoration-none btn btn-danger' %></li>
 </ul>
 
-<%= link_to "Home", "/" %>
+<%= render 'articles/home-btn' %>
 
 <h2>Comments</h2>
 <%= @article.comments.length > 0 ? (render @article.comments) : "No comments" %>
