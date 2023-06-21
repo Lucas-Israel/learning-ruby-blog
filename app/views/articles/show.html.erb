@@ -15,7 +15,7 @@
 <%= render 'articles/home-btn' %>
 
 <h2>Comments</h2>
-<%= @article.comments.length > 1 ? (render @article.comments) : "No comments" %>
+<%= @article.comments.length > 0 ? (render @article.comments) : "No comments" %>
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
