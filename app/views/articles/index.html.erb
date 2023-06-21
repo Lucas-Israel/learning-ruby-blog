@@ -1,0 +1,17 @@
+<h1>Articles</h1>
+
+Our blog has <%= Article.public_count %> articles and counting!
+
+<div class='d-flex flex-column m-5 pt-3 pe-3 ps-3 bg-light rounded bd-links'>
+  <ul class='list-unstyled'>
+    <% @articles.each do |article| %>
+      <% unless article.archived? %>
+        <li>
+          <%= link_to article.title, article, class:'bd-links-link d-inline-block rounded' %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "New Article", new_article_path, class:'text-decoration-none btn btn-light' %>
